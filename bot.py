@@ -16,13 +16,9 @@ client = TelegramClient(StringSession(session), api_id, api_hash)
 async def handler(event):
     msg = event.message
 
-    # دەقەکە بۆ فۆرماتی خوازراو دەگۆڕین (ناوەکان گۆڕدراون)
+    # گۆڕینی ناوەکان
     new_text = msg.text or ""
-    
-    # گۆڕینی @About_Warnisx بۆ ناوی خۆت
     new_text = new_text.replace("@About_Warnisx", "@warven_24")
-    
-    # گۆڕینی @Warnisx بۆ ناوی خۆت
     new_text = new_text.replace("@Warnisx", "@warven_24")
 
     if msg.media:
