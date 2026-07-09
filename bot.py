@@ -1,8 +1,8 @@
-1from telethon import TelegramClient, events
+from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 
 # ========== ڕێکخستنەکان ==========
-api_id = 33774652
+api_id = 
 api_hash = "c438941d8f43a0ff59fcc4b3f3c2fb42"
 session = "1AZWarzgBu5ri3erA6UJlyTT8kJf2Bj4iV2LJTRCBU_9QqcC8CrVpgaSXm-ip4YH3xwNBGzcwJFyGjjHlvOoL0K1pL4cgme7spH9Nn2CQF0_OfEMvqRenIJJvDFYuKsqmVXzzBBYtSh_nOdaBvvfXc9ZPxUOmZDd3neKSmDqulD8IgfuX31gGlgfrky_INYFiIuEKaXYzvMci1hG0YKN41jSr1B0qQnmI7IlRuKD9vg3pYRESvCEiuejW2G3ITruiJJ2-R2Yndwk7Aa8ISHxHzr3eQgRM5_LfA0t3DQz80SyhWIijM15PCUfeRkwRdIKx_elMjsSuFa05VuMmwc57Yg3xw9AWA00="
 # ===================================
