@@ -16,10 +16,11 @@ client = TelegramClient(StringSession(session), api_id, api_hash)
 async def handler(event):
     msg = event.message
 
-    # گۆڕینی ناوەکان بەپێی داوای تۆ
+    # گۆڕینی ناوەکان
     new_text = msg.text or ""
-    new_text = new_text.replace("@About_SARMAD428", "@Sarmad428")
-    new_text = new_text.replace("@SARMAD428", "@warven_24")
+    new_text = new_text.replace("@About_Warnisx", "@About_SARMAD428")
+    new_text = new_text.replace("@Warnisx", "@SARMAD428")
+    new_text = new_text.replace("Warnisx Scrapper", "KURD 428 Scrapper")
 
     if msg.media:
         data = await msg.download_media(file=bytes)
