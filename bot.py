@@ -1,4 +1,4 @@
-from telethon import TelegramClient, events
+1from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 
 # ========== ڕێکخستنەکان ==========
