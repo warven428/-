@@ -17,8 +17,19 @@ async def handler(event):
     msg = event.message
 
     new_text = msg.text or ""
-    # گۆڕینی ناوی Warnisx بۆ KURD
-    new_text = new_text.replace("Warnisx", "KURD")
+
+    # گۆڕینی ناوەکان (ئەمەش دەتوانرێت بکرێت)
+    new_text = new_text.replace("@About_KURD", "@warven_428")
+    new_text = new_text.replace("@KURD", "@warven_24")
+    new_text = new_text.replace("KURD", "KURDISTAN")
+
+    # *** لابردنی هەموو دێڕەکانی Developed By ***
+    # بەم شێوەیە دەقەکە دەپشکنرێت و دێڕەکە دەسڕدرێت
+    import re
+    new_text = re.sub(r'(?m)^.*Developed By.*$', '', new_text)
+
+    # پاککردنەوەی دەقەکە لە هێڵی بەتاڵ یان زیادە
+    new_text = new_text.strip()
 
     if msg.media:
         data = await msg.download_media(file=bytes)
