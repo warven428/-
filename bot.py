@@ -16,18 +16,27 @@ client = TelegramClient(StringSession(session), api_id, api_hash)
 async def handler(event):
     msg = event.message
 
+    # دەقەکە بۆ فۆرماتی خوازراو دەگۆڕین (ناوەکان گۆڕدراون)
+    new_text = msg.text or ""
+    
+    # گۆڕینی @About_Warnisx بۆ ناوی خۆت
+    new_text = new_text.replace("@About_Warnisx", "@warven_24")
+    
+    # گۆڕینی @Warnisx بۆ ناوی خۆت
+    new_text = new_text.replace("@Warnisx", "@warven_24")
+
     if msg.media:
         data = await msg.download_media(file=bytes)
         await client.send_file(
             TARGET_CHANNEL,
             data,
-            caption=msg.text or "",
+            caption=new_text,
             formatting_entities=msg.entities
         )
     else:
         await client.send_message(
             TARGET_CHANNEL,
-            msg.text or "",
+            new_text,
             formatting_entities=msg.entities
         )
 
