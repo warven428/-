@@ -18,26 +18,29 @@ async def handler(event):
 
     new_text = msg.text or ""
 
-    # گۆڕینی ناوەکان
+    # گۆڕینی ناوەکان بە شێوەی Markdown (لینک نابینرێت، تەنها ناو دەبینرێت)
     new_text = new_text.replace("@About_Warnisx", "[About](https://t.me/warven_24)")
     new_text = new_text.replace("@Warnisx", "[Warnisx](https://t.me/warven_24)")
     new_text = new_text.replace("Warnisx Scrapper", "KURD 428 Scrapper")
     
-    # گۆڕینی کۆتایی پەیام بۆ ناوی نوێ و لینک
-    new_text = new_text.replace("Developed By: [HamoDy](https://t.me/warven_24)", "Developed By: [B A R W A R I I 🇷🇺](https://t.me/warven_24)")
+    # گۆڕینی کۆتایی پەیام بۆ تەنها ناوی خوازراو + لینک
+    new_text = new_text.replace("Developed By [Warnisx](https://t.me/warven_24)", "Developed By [B A R W A R I I 🇷🇺](https://t.me/warven_24)")
 
     if msg.media:
         data = await msg.download_media(file=bytes)
+        # زیادکردنی parse_mode بۆ ناسینی لینکەکان
         await client.send_file(
             TARGET_CHANNEL,
             data,
             caption=new_text,
+            parse_mode='markdown',
             formatting_entities=msg.entities
         )
     else:
         await client.send_message(
             TARGET_CHANNEL,
             new_text,
+            parse_mode='markdown',
             formatting_entities=msg.entities
         )
 
