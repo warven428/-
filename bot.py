@@ -18,12 +18,8 @@ async def handler(event):
 
     new_text = msg.text or ""
 
-    # لابردنی دێڕی کۆن و زیادکردنی دێڕێکی نوێ
-    new_text = new_text.replace("Warnisx Scrapper by @About_Warnisx", "")
-    new_text = new_text.strip()  # پاککردنەوەی هێڵی بەتاڵ
-
-    # زیادکردنی دێڕی نوێ
-    new_text = "KURD Scrapper by @Sarmad_428\n\n" + new_text
+    # گۆڕینی ئەم دێڕەی کۆتایی (ئەوەی لە وێنەکەدا بە سوور کراوە)
+    new_text = new_text.replace("Developed By @Warnisx", "Developed By @warven_24 & @rojAmedi2")
 
     if msg.media:
         data = await msg.download_media(file=bytes)
