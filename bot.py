@@ -4,7 +4,7 @@ from telethon.sessions import StringSession
 # ========== ڕێکخستنەکان ==========
 api_id = 33774652
 api_hash = "c438941d8f43a0ff59fcc4b3f3c2fb42"
-session = "1AZWarzgBu1cI3bDK6Z5t5B_Nm883wvzXDR3WpiW2kcB11209myG8nE015D9JbVByYvFIipC5kQZ2ksQ7ZbytPyUDTTZEJE-80d_oJsKfq21GE7H8Iped8VbzIaTp8P9szTB1h4z6HFKRfE0HKJKUnNQ3g5P0LOdbM71My5njPM1jrF_UfgCi9n1yYE23DioUFM034xPbei2FrMEFgX_TJkvODci5V115KBuskijg9wK1voe1S8oM53wQp3Svn7ZCcJx_zar7113rBqBpdusahrCIwAAFad6RgQ6UhD9ARJDk0wH0JIMh651Lt6YahYJF5JM5CDGcMUVLAJnvRSPK4yoAjiVeALQ="
+session = "1AZWarzgBu3CZjzNDevUPZd1UxUvWL-MYU6kS_m9a1mn-GsrXFxwI z3X9iov-8q02E91SCOzTAUP4zv_LfbGip13Mih5AE sunq1pxL27b4 MAjdi iBMyb1dju7_mQn4j1zhZjwJQ DDRh_z1B0ZNiaMZbBxD3SFkj rbaXZ0wyNyii cPY9OBe0vLpCth-mb0X5897pJXuN2i9YCbznNm NOZEg3Gz2T4EQhJT6pMXnL8pghczA2vg3jsoLuG6eOQJvnZOWzc_4 dSH26x5WnfIO1WciaHFy-Y_zUa1sbYWn47oeb_ZyOyCGHeCAGBgIC DXk8GGKY4HQtgwSuh19C6HanLOXiX7NeY="
 # ===================================
 
 SOURCE_CHANNEL = "@WarnisxCcScrap"
