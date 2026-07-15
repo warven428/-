@@ -3,11 +3,12 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 
 # ========== ڕێکخستنەکان (بە تەواوی پڕکراونەتەوە) ==========
-API_ID = 33774652
-API_HASH = "c438941d8f43a0ff59fcc4b3f3c2fb42"
+# 🔴 ئەی پی ئای نوێیەکان (دەبێت ئەمە بێت نەک کۆنەکان)
+API_ID = 33790522
+API_HASH = "00e4131295f55452e143c06099c1ddae"
 
-# سێشنە نوێیەکەت (کە لە iSH وەرتبوو)
-SESSION_STRING = "1AZWarzgBu30Ism7pw5g2mNXlXvweZchZNbLZMZO25GCIKOHTb_i7VSz1flfG5OR1nwZehL5pm0rw98tJLYqM1i32amzCi5IoIOLJGU_AXdFPAEH9ZHYHlOxOwdOlouh5329PYS0aJGxYRd7a5iPkh1A0WRO6BWyCoY6fnMbkQcEgNbes_XwnPml6p1RaR6sXptNV0v5gftR5UtUManyJGEdO2bm32qKLyGC39m5dX402melaD3fNvCRxiDCGZRn-1rjYdAbpc3U1LdoeWgQ5nFiptLSvYuVMFKcy81B2aEBeifg_Kcm6uQ8w-fW9Xgj7ZYsFE4Tt_iXD85oY2p2LHty3WxL4UUo="
+# 🔴 سێشنە نوێیەکەت (کە ئێستا ناردووت)
+SESSION_STRING = "1AZWarzgBuwtiHErne9Ht3cfd6fU0vzPKofRgjM-l2VMrN5C_SXcU7tEx9vSZmHXUAMvNxPPZeYXppdDrJhqKKnM_-t__4cQ8ZaKlv2tzQ5nGcp_bsPosAttaeEf3dulVBjXl4WGLViGmWCgvCV7eu-5F49eRXqcejZ2sCOa7bBd8FDrmBk6_njBL-EhihzqXkowk87NFdbDiZaDlrqx0f_q64i0nLYu62YX0WZa5wKGO4TnBQ1uEnXawARV67owrT4hAXqBysL9vjKv1-2wdp1wr-9dm31vReCLvd5NwOukWJb5d0cc8ftSsQJBBrMymqD8TC9GlfpkI81cZ2da6tQPnu1EmDv4="
 
 SOURCE_CHANNEL = "@approved_card4"  # سەرچاوە
 TARGET_CHANNEL = "@Cc428Card"       # ئامانج
@@ -25,7 +26,7 @@ async def handler(event):
     new_text = new_text.replace("@Warnisx", "@warven_24")
     new_text = new_text.replace("@scrc1bot", "@warven_24")
 
-    # تەنیا تەکست دەنێرێت و میدیا (وێنە/ڤیدیۆ) فڕێدەدات
+    # تەنیا تەکست دەنێرێت
     if new_text.strip() != "":
         await client.send_message(
             TARGET_CHANNEL,
