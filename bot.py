@@ -16,20 +16,20 @@ client = TelegramClient(StringSession(session), api_id, api_hash)
 async def handler(event):
     msg = event.message
 
-    # تەکستەکە هەڵدەگرین و گۆڕانکاری تێدا دەکەین
     new_text = msg.text or ""
+    # گۆڕینی هەموو ئاماژە کۆنەکان بۆ ناوی نوێ
     new_text = new_text.replace("@About_Warnisx", "@warven_24")
     new_text = new_text.replace("@Warnisx", "@warven_24")
+    new_text = new_text.replace("@scrc1bot", "@warven_24")   # ← ئەم هێڵە زیاد کرا
 
-    # ئەگەر تەکست بوونی هەبوو، تەنیا تەکستەکە دەنێرین و وێنە/میدیاکە فڕێ دەدەین
+    # ئەگەر تەکست بوونی هەبوو، تەنیا تەکستەکە دەنێرین (وێنە و میدیا فڕێ دەدرێن)
     if new_text.strip() != "":
         await client.send_message(
             TARGET_CHANNEL,
             new_text,
             formatting_entities=msg.entities
         )
-    # ئەگەر تەکست نەبوو و تەنیا وێنە یان ڤیدیۆ بوو، هیچی بۆ نانێردرێت (فڕێ دەدرێت)
 
-print("Bot is running... (Media/Photos are now IGNORED and not forwarded)")
+print("Bot is running... (Media/Photos are IGNORED, and @scrc1bot is now replaced too)")
 client.start()
 client.run_until_disconnected()
