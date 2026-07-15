@@ -1,5 +1,6 @@
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
+import os
 
 # ========== ڕێکخستنەکان ==========
 api_id = 33774652
@@ -8,9 +9,7 @@ session = "1AZWarzgBu3-KiH74R8lf-DsuIsRdxleaXi6S7pBPvKYH-SZLulIUltJTYR7WvTXR7Qgr
 # ===================================
 
 SOURCE_CHANNEL = "@approved_card4"
-TARGET_CHANNEL = "@kurdiraq7272"  # ئەگەر بیگۆڕیت، بڵێ
-
-# ڕێڕەوی وێنەی تایبەت کە تۆ دەتەوێت بنێردرێت (پێویستە لەم ڕێڕەوەدا هەبێت)
+TARGET_CHANNEL = "@kurdiraq7272"
 CUSTOM_IMAGE_PATH = "IMG_4607.webp"
 
 client = TelegramClient(StringSession(session), api_id, api_hash)
@@ -19,20 +18,27 @@ client = TelegramClient(StringSession(session), api_id, api_hash)
 async def handler(event):
     msg = event.message
 
-    # تەکستەکە هەڵدەگرین و گۆڕانکاری تێدا دەکەین
     new_text = msg.text or ""
     new_text = new_text.replace("@About_Warnisx", "@warven_24")
     new_text = new_text.replace("@Warnisx", "@warven_24")
     new_text = new_text.replace("@scrc1bot", "@warven_24")
 
-    # هەر پەیامێک بێت (تەکست یان وێنە)، ئەم وێنەی تایبەتە دەنێرین
-    # و تەکستی گۆڕدراوەکەش وەک کاپشن بۆ دەنوسین
-    await client.send_file(
-        TARGET_CHANNEL,
-        CUSTOM_IMAGE_PATH,
-        caption=new_text
-    )
+    try:
+        # هەوڵبدە وێنەکە بنێرێت
+        await client.send_file(
+            TARGET_CHANNEL,
+            CUSTOM_IMAGE_PATH,
+            caption=new_text
+        )
+    except FileNotFoundError:
+        # ئەگەر وێنەکە نەدۆزرایەوە، تەنیا تەکستەکە بنێرە و بۆت ناکەوێت
+        print("⚠️ وێنەکە نەدۆزرایەوە! تەنیا تەکستەکە دەنێردرێت.")
+        await client.send_message(TARGET_CHANNEL, new_text)
+    except Exception as e:
+        # هەر هەڵەیەکی تر ڕوویدا، تۆماری بکە بەڵام بۆت ناکەوێت
+        print(f"❌ هەڵەیەک ڕوویدا: {e}")
+        await client.send_message(TARGET_CHANNEL, new_text)
 
-print("Bot is running... (Now sending your custom image: IMG_4607.webp for EVERY message)")
+print("Bot is running... (with error handling for missing image)")
 client.start()
 client.run_until_disconnected()
