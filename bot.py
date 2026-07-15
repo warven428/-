@@ -6,10 +6,11 @@ from telethon.sessions import StringSession
 API_ID = 33790522
 API_HASH = "00e4131295f55452e143c06099c1ddae"
 
-SESSION_STRING = "1AZWarzgBuwtiHErne9Ht3cfd6fU0vzPKofRgjM-l2VMrN5C_SXcU7tEx9vSZmHXUAMvNxPPZeYXppdDrJhqKKnM_-t__4cQ8ZaKlv2tzQ5nGcp_bsPosAttaeEf3dulVBjXl4WGLViGmWCgvCV7eu-5F49eRXqcejZ2sCOa7bBd8FDrmBk6_njBL-EhihzqXkowk87NFdbDiZaDlrqx0f_q64i0nLYu62YX0WZa5wKGO4TnBQ1uEnXawARV67owrT4hAXqBysL9vjKv1-2wdp1wr-9dm31vReCLvd5NwOukWJb5d0cc8ftSsQJBBrMymqD8TC9GlfpkI81cZ2da6tQPnu1EmDv4="
+# 🔴 سێشنە نوێیەکەت (گۆڕدرا بۆ ئەم سێشنە نوێیەی کە ناردووت)
+SESSION_STRING = "1AZWarzgBu0uU3sU7X0yxSsfs3Zmc2-5axcQ-R_y2elHPIwTL3L00aRpWoVhvfZuKoYEqW8uYYJtYF374DjBtvM85wEakiNNKFPN_p8GcNVRecOdLA25hM6QtSilbZQ1WBhsXxRUL6HQKRTGsUtZPlofmGOFdcEuUg_1hsRSOftyjaELMU55cd6tEPOTeDvss94GQvOsV2EtiH8Mq1h9P5b3UvFPFKv0sUokYWUzrnzB1YanEzonF2gnCWWgcEiw8UGIMg0ZAUHlKox97OML0ipwOUP1dYOyeYEAKjRCrGeaN5NcMpennHlHHwkF707oTerI48DQVpF8SEGhAt6b4wrFFZUpMCc428duA="
 
-SOURCE_CHANNEL = "@approved_card4"
-TARGET_CHANNEL = "@Cc428Card"
+SOURCE_CHANNEL = "@approved_card4"  # سەرچاوە
+TARGET_CHANNEL = "@Card"       # ئامانج
 # ========================================================
 
 client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
@@ -18,12 +19,19 @@ client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
 async def handler(event):
     msg = event.message
     new_text = msg.text or ""
+
+    # گۆڕینی ناوە کۆنەکان
     new_text = new_text.replace("@About_Warnisx", "@warven_24")
     new_text = new_text.replace("@Warnisx", "@warven_24")
     new_text = new_text.replace("@scrc1bot", "@warven_24")
 
+    # تەنیا تەکست دەنێرێت (میدیا فڕێدەدات)
     if new_text.strip() != "":
-        await client.send_message(TARGET_CHANNEL, new_text, formatting_entities=msg.entities)
+        await client.send_message(
+            TARGET_CHANNEL,
+            new_text,
+            formatting_entities=msg.entities
+        )
 
 async def main():
     try:
@@ -32,7 +40,6 @@ async def main():
         print("Bot is now ONLINE and listening! (Media is being ignored)")
         await client.run_until_disconnected()
     except Exception as e:
-        # ئەم بەشە هەڵەی تۆڕ دەگرێت و ڕێگە لە کەوتنی ڕەیڵوەی دەگرێت
         print(f"Bot disconnected due to network error: {e}")
     finally:
         await client.disconnect()
